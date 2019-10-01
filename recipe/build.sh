@@ -1,20 +1,24 @@
 #!/bin/bash
 
-set -e
+mkdir -p _build
+pushd _build
 
-mkdir -p build
-pushd build
+# link librt to get clock_gettime on older glibc versions
+if [ "$(uname)" == "Linux" ]; then
+	export LDFLAGS="-lrt ${LDFLAGS}"
+fi
 
 # configure
 cmake ${SRC_DIR} \
 	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
-	-DCMAKE_BUILD_TYPE=Release \
+	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
+	-DCMAKE_INSTALL_LIBDIR="lib" \
+	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=true
 
 # build
-cmake --build . -- -j ${CPU_COUNT}
+cmake --build . -- -j${CPU_COUNT}
 
-# check
-ctest -VV
+# test
+ctest -V
 
-# install
 cmake --build . --target install
