@@ -1,12 +1,11 @@
 {% set name = "ldas-tools-utilities" %}
-{% set version = "2.6.5" %}
+{% set version = "2.6.6" %}
 
 # dependencies
-{% set ldas_tools_cmake_version = "1.0.8" %}
-{% set ldas_tools_diskcacheapi_version = "2.7.0" %}
-{% set ldas_tools_frameapi_version = "2.6.4" %}
-{% set ldas_tools_framecpp_version = "2.7.0" %}
-{% set ldas_tools_ldasgen_version = "2.7.0" %}
+{% set ldas_tools_cmake_version = "1.2.2" %}
+{% set ldas_tools_diskcacheapi_version = "2.7.1" %}
+{% set ldas_tools_frameapi_version = "2.6.5" %}
+{% set ldas_tools_ldasgen_version = "2.7.1" %}
 
 package:
   name: {{ name }}
@@ -14,7 +13,7 @@ package:
 
 source:
   url: http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz
-  sha256: 64eee9f92a111fdafdae1c248e747d1f1a11cc7e69656322f620d530351d57b5
+  sha256: fca735ba9977afd2137c4e5e9eaf43e4026448b20366e69eb78e0d97c8f7a07c
 
 build:
   number: 0
@@ -30,15 +29,15 @@ requirements:
   host:
     - ldas-tools-cmake >={{ ldas_tools_cmake_version }}
     - ldas-tools-al
-    - ldas-tools-diskcacheapi {{ ldas_tools_diskcacheapi_version }}
-    - ldas-tools-frameapi {{ ldas_tools_frameapi_version }}
-    - ldas-tools-framecpp {{ ldas_tools_framecpp_version }}
-    - ldas-tools-ldasgen {{ ldas_tools_ldasgen_version }}
+    - ldas-tools-diskcacheapi >={{ ldas_tools_diskcacheapi_version }}
+    - ldas-tools-frameapi >={{ ldas_tools_frameapi_version }}
+    - ldas-tools-framecpp
+    - ldas-tools-ldasgen >={{ ldas_tools_ldasgen_version }}
   run:
     - ldas-tools-al
     - ldas-tools-diskcacheapi >={{ ldas_tools_diskcacheapi_version }}
     - ldas-tools-frameapi >={{ ldas_tools_frameapi_version }}
-    - ldas-tools-framecpp >={{ ldas_tools_framecpp_version }}
+    - ldas-tools-framecpp
     - ldas-tools-ldasgen >={{ ldas_tools_ldasgen_version }}
 
 test:
