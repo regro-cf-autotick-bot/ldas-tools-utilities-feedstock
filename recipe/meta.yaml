@@ -29,13 +29,15 @@ requirements:
   host:
     - ldas-tools-cmake >={{ ldas_tools_cmake_version }}
     - ldas-tools-al
-    - ldas-tools-diskcacheapi {{ ldas_tools_diskcacheapi_version }}
-    - ldas-tools-frameapi {{ ldas_tools_frameapi_version }}
-    - ldas-tools-ldasgen {{ ldas_tools_ldasgen_version }}
+    - ldas-tools-diskcacheapi >={{ ldas_tools_diskcacheapi_version }}
+    - ldas-tools-frameapi >={{ ldas_tools_frameapi_version }}
+    - ldas-tools-framecpp
+    - ldas-tools-ldasgen >={{ ldas_tools_ldasgen_version }}
   run:
     - ldas-tools-al
     - ldas-tools-diskcacheapi >={{ ldas_tools_diskcacheapi_version }}
     - ldas-tools-frameapi >={{ ldas_tools_frameapi_version }}
+    - ldas-tools-framecpp
     - ldas-tools-ldasgen >={{ ldas_tools_ldasgen_version }}
 
 test:
