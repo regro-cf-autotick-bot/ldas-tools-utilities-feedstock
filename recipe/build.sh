@@ -12,8 +12,8 @@ fi
 cmake \
 	${SRC_DIR} \
 	${CMAKE_ARGS} \
-	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
-	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=true \
+	-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo \
+	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen:BOOL=true \
 ;
 
 # build
