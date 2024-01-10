@@ -16,6 +16,8 @@ source:
   sha256: a4ccc1d4a254ca0b1931344ace31701cdde59ca58dfea280ee9a180e9bad905d
 
 build:
+  error_overdepending: true
+  error_overlinking: true
   number: 0
   skip: true  # [win]
 
