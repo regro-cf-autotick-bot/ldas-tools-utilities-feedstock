@@ -35,7 +35,7 @@ requirements:
     - ldas-tools-frameapi >={{ ldas_tools_frameapi_version }}
     - ldas-tools-framecpp
     - ldas-tools-ldasgen >={{ ldas_tools_ldasgen_version }}
-    - libboost-headers
+    - libboost-devel
 
 test:
   commands:
