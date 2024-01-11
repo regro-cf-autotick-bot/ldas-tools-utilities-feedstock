@@ -1,5 +1,5 @@
 {% set name = "ldas-tools-utilities" %}
-{% set version = "2.7.0" %}
+{% set version = "2.7.1" %}
 
 # dependencies
 {% set ldas_tools_cmake_version = "1.2.3" %}
@@ -13,7 +13,7 @@ package:
 
 source:
   url: http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz
-  sha256: a4ccc1d4a254ca0b1931344ace31701cdde59ca58dfea280ee9a180e9bad905d
+  sha256: 0586c015d7fb0dd869d01d6c7c40d6dcfababf605e208072b1df8abb27f81e7f
 
 build:
   error_overdepending: true
@@ -35,7 +35,7 @@ requirements:
     - ldas-tools-frameapi >={{ ldas_tools_frameapi_version }}
     - ldas-tools-framecpp
     - ldas-tools-ldasgen >={{ ldas_tools_ldasgen_version }}
-    - libboost-headers
+    - libboost-devel
 
 test:
   commands:
