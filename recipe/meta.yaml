@@ -1,5 +1,5 @@
 {% set name = "ldas-tools-utilities" %}
-{% set version = "2.7.1" %}
+{% set version = "2.7.2" %}
 
 # dependencies
 {% set ldas_tools_cmake_version = "1.2.3" %}
@@ -13,12 +13,12 @@ package:
 
 source:
   url: http://software.ligo.org/lscsoft/source/{{ name }}-{{ version }}.tar.gz
-  sha256: 0586c015d7fb0dd869d01d6c7c40d6dcfababf605e208072b1df8abb27f81e7f
+  sha256: df991b416ea2b128e78001f40177f0e4d447ea57757a465b3d9d270e345d7f66
 
 build:
   error_overdepending: true
   error_overlinking: true
-  number: 2
+  number: 0
   skip: true  # [win]
 
 requirements:
