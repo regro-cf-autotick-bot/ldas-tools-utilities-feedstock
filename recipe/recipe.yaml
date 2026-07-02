@@ -2,13 +2,13 @@ schema_version: 1
 
 context:
   name: ldas-tools-utilities
-  version: "2.7.4"
-  ldas_tools_cmake_version: 1.4.1
-  ldas_tools_al_version: 2.8.0
-  ldas_tools_diskcacheapi_version: 2.7.9
-  ldas_tools_frameapi_version: 3.0.7
-  ldas_tools_framecpp_version: 4.0.1
-  ldas_tools_ldasgen_version: 2.7.5
+  version: "2.7.5"
+  ldas_tools_cmake_version: 1.5.0
+  ldas_tools_al_version: 2.10.0
+  ldas_tools_diskcacheapi_version: 2.7.11
+  ldas_tools_frameapi_version: 3.0.8
+  ldas_tools_framecpp_version: 4.1.0
+  ldas_tools_ldasgen_version: 2.7.7
 
 package:
   name: ${{ name|lower }}
@@ -16,28 +16,22 @@ package:
 
 source:
   url: https://software.igwn.org/sources/source/${{ name }}-${{ version }}.tar.gz
-  sha256: e06fd42ff7e9a99478db73e5b715e08d475369b91b23748d4234afb576077f97
+  sha256: c000cfdfc20e7a845b07cf7e97c4c302797782f027a973b64436fd539974cba5
 
 build:
   dynamic_linking:
-    missing_dso_allowlist:
-      - if: osx
-        then: /usr/lib/libSystem.B.dylib
     overdepending_behavior: error
-    overlinking_behavior: error
-  number: 1
+  number: 0
   skip: win
 
 requirements:
   build:
     - ${{ compiler('c') }}
-    - ${{ stdlib("c") }}
+    - ${{ stdlib('c') }}
     - ${{ compiler('cxx') }}
-    - cmake >=3.6
-    - if: unix
-      then:
-        - make
-        - pkg-config
+    - cmake >=3.12,<4.0.0a0
+    - make
+    - pkg-config
   host:
     - ldas-tools-al >=${{ ldas_tools_al_version }}
     - ldas-tools-cmake >=${{ ldas_tools_cmake_version }}
