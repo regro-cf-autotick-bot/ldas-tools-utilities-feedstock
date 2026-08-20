@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: ldas-tools-utilities
-  version: "2.7.5"
+  version: "2.7.6"
   ldas_tools_cmake_version: 1.5.0
   ldas_tools_al_version: 2.10.0
   ldas_tools_diskcacheapi_version: 2.7.11
@@ -16,7 +16,7 @@ package:
 
 source:
   url: https://software.igwn.org/sources/source/${{ name }}-${{ version }}.tar.gz
-  sha256: c000cfdfc20e7a845b07cf7e97c4c302797782f027a973b64436fd539974cba5
+  sha256: eeaad29c30f14af41f5415a0a49e08090b9f755c387129a6df24aaff59715ef1
 
 build:
   dynamic_linking:
